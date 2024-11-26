@@ -32,8 +32,9 @@ body {
     padding: 40px;
     width: 350px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
     overflow: hidden;
+    opacity: 1;
 }
 
 /* Animación en hover */
@@ -43,10 +44,11 @@ body {
 
 /* Estilos del saludo */
 .greeting {
-    color: #4a90e2;
+    color: #ff9f00;  /* Naranja */
     font-size: 26px;
     font-weight: bold;
     margin-bottom: 15px;
+    animation: fadeIn 1s ease-out;
 }
 
 /* Estilos del mensaje principal */
@@ -60,7 +62,7 @@ body {
 
 /* Estilos del botón */
 .reveal-button {
-    background-color: #4a90e2;
+    background-color: #ff9f00;  /* Naranja */
     color: #fff;
     padding: 12px 25px;
     border: none;
@@ -71,7 +73,7 @@ body {
 }
 
 .reveal-button:hover {
-    background-color: #357ab7;
+    background-color: #e87c00;  /* Naranja más oscuro */
 }
 
 /* Estilos del mensaje oculto */
@@ -82,6 +84,8 @@ body {
     font-size: 16px;
     font-style: italic;
     line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
 
 /* Firma de Victor */
@@ -103,7 +107,7 @@ body {
     height: 120px; /* Tamaño ajustado de la foto */
     border-radius: 50%; /* Hace que la foto sea un círculo */
     object-fit: cover; /* Asegura que la foto se recorte bien si no es cuadrada */
-    border: 5px solid #4a90e2; /* Un borde suave y armonioso */
+    border: 5px solid #ff9f00; /* Un borde suave y armonioso */
     margin-bottom: 15px; /* Espacio debajo de la foto */
 }
 
@@ -112,4 +116,31 @@ body {
 .card.revealed .message,
 .card.revealed .reveal-button {
     display: none;
+}
+
+/* Animaciones de aparición */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo para el botón de volver */
+.back-button {
+    background-color: #ff9f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #e87c00;
 }
