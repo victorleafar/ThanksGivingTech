@@ -1,0 +1,115 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y configuración de la página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Diseño de la tarjeta personalizada */
+.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Animación en hover */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos del saludo */
+.greeting {
+    color: #4a90e2;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilos del mensaje principal */
+.message {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Estilos del botón */
+.reveal-button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.reveal-button:hover {
+    background-color: #357ab7;
+}
+
+/* Estilos del mensaje oculto */
+.hidden-message {
+    margin-top: 20px;
+    display: none;
+    color: #555;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Firma de Victor */
+.signature {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e34b6a;
+    margin-top: 15px;
+}
+
+/* Estilos del header (foto y saludo) */
+.header {
+    margin-bottom: 20px;
+    text-align: center; /* Centra el contenido del header */
+}
+
+.photo {
+    width: 120px; /* Tamaño ajustado de la foto */
+    height: 120px; /* Tamaño ajustado de la foto */
+    border-radius: 50%; /* Hace que la foto sea un círculo */
+    object-fit: cover; /* Asegura que la foto se recorte bien si no es cuadrada */
+    border: 5px solid #4a90e2; /* Un borde suave y armonioso */
+    margin-bottom: 15px; /* Espacio debajo de la foto */
+}
+
+/* Cuando se revela el mensaje, oculta la tarjeta original */
+.card.revealed .header,
+.card.revealed .message,
+.card.revealed .reveal-button {
+    display: none;
+}
